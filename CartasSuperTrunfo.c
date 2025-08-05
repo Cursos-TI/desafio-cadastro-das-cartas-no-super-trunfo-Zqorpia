@@ -15,20 +15,20 @@ int main() {
     float area, area2;
     float gdp, gdp2;
     int turs, turs2;
-    char estado, estado2;
+    char estado[15], estado2[15];
 
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     printf("CARTA1 - Digite o Estado: \n");
-    scanf("%c", &estado);
+    scanf(" %s", estado);
 
     printf("CARTA1 - Digite o código da carta: \n");
-    scanf("%s", &codcarta);
+    scanf(" %s", codcarta);
 
     printf("CARTA1 - Digite o nome da cidade: \n");
-    scanf("%s", &nome);
+    scanf(" %s", nome);
 
     printf("CARTA1 - Digite a população da cidade: \n");
     scanf("%i", &population);
@@ -44,13 +44,13 @@ int main() {
     printf("\n\n");
 
     printf("CARTA2 - Digite o Estado: \n");
-    scanf("%c", &estado2);
+    scanf(" %s", estado2);
 
     printf("CARTA2 - Digite o código da carta: \n");
-    scanf("%s", &codcarta2);
+    scanf(" %s", codcarta2);
 
     printf("CARTA2 - Digite o nome da cidade: \n");
-    scanf("%s", &nome2);
+    scanf(" %s", nome2);
 
     printf("CARTA2 - Digite a população da cidade: \n");
     scanf("%i", &population2);
@@ -72,7 +72,7 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     printf("CARTA1 \n");
-    printf("Estado: %c \n", estado);
+    printf("Estado: %s \n", estado);
     printf("Código da carta: %s \n", codcarta);
     printf("Cidade: %s \n", nome);
     printf("População: %i \n", population);
@@ -81,7 +81,7 @@ int main() {
     printf("Pontos Turísticos: %i \n\n", turs);
 
     printf("CARTA2 \n");
-    printf("Estado: \n", &estado2);
+    printf("Estado: %s \n", estado2);
     printf("Código da carta: %s \n", codcarta2);
     printf("Cidade: %s \n", nome2);
     printf("População: %i \n", population2);
