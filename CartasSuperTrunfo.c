@@ -68,11 +68,11 @@ int main() {
     printf("\n\n");
 
     // Adicionando novas variáveis que calculam a desidade populacional e pib per capta.
-    densipop = (float)("%i / %f", population, area);
-    densipop2 = (float)("%i / %f", population2, area2);
+    densipop = (float)population / area;
+    densipop2 = (float)population2 / area2;
 
-    gdpcap = (float)("%f / %i", gdp, population);
-    gdpcap2 = (float)("%f / %i", gdp2, population2);
+    gdpcap = gdp / (float)population;
+    gdpcap2 = gdp2 / (float)population2;
 
 
 
