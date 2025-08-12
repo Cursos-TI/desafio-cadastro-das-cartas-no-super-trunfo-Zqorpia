@@ -76,8 +76,8 @@ int main() {
     gdpcap2 = gdp2 / (float)population2;
 
     // Cálculo do SuperPoder, somando todos os atributos numéricos
-    superpoder = (float)population + area + gdp + (float)turs + gdpcap + densipop;
-    superpoder2 = (float)population2 + area2 + gdp2 + (float)turs2 + gdpcap2 + densipop2;
+    superpoder = (float)population + area + gdp + (float)turs + gdpcap + (1.0f / densipop);
+    superpoder2 = (float)population2 + area2 + gdp2 + (float)turs2 + gdpcap2 + (1.0f / densipop2);
 
     // Comparação das cartas
     int popwin = population > population2;
