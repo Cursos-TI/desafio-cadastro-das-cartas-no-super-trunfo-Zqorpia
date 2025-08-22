@@ -6,7 +6,7 @@
 // Siga os comentários para implementar cada parte do desafio.
 //Teste larissa
 
-int main() {
+int main(){
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     char codcarta[10], codcarta2[10];
@@ -80,13 +80,15 @@ int main() {
     superpoder2 = (float)population2 + area2 + gdp2 + (float)turs2 + gdpcap2 + (1.0f / densipop2);
 
     // Comparação das cartas
-    int popwin = population > population2;
-    int areawin = area > area2;
-    int gdpwin = gdp > gdp2;
-    int turswin = turs > turs2;
-    int gdpcapwin = gdpcap > gdpcap2;
-    int densipopwin = densipop < densipop2;
-    int spwin = superpoder > superpoder2;
+    // NOVO: Alteração nos requisitos: apenas um dos atributos numéricos
+    // NOVO: de booleano para if-else
+    // int popwin = population > population2;
+    // int areawin = area > area2;
+    // int gdpwin = gdp > gdp2;
+    // int turswin = turs > turs2;
+    // int gdpcapwin = gdpcap > gdpcap2;
+    // int densipopwin = densipop < densipop2;
+    // int spwin = superpoder > superpoder2;
 
 
     // Exibição dos Dados das Cartas:
@@ -117,14 +119,23 @@ int main() {
     printf("\n\n");
 
     printf(":::::VENCEDOR::::: \n");
-    printf("(1 = CARTA1  0 = CARTA2) \n");
-    printf("POPULAÇÃO: %i\n", popwin);
-    printf("ÁREA: %i\n", areawin);
-    printf("PIB: %i\n", gdpwin);
-    printf("P.TURÍSTICO: %i\n", turswin);
-    printf("DENS.POPULACIONAL: %i\n", densipopwin);
-    printf("PIBperCAPITA: %i\n", gdpcapwin);
-    printf("SUPER TRUNFO: %i\n", spwin);
+    printf("ATRIBUTO: PIB per CAPTA \n");
+    printf("Carta1: %.2f reais \n", gdpcap);
+    printf("Carta2: %.2f reais \n", gdpcap2);
+    // NOVO: mostrar apenas o atributo escolhido para comparação de vencedor
+    // printf("(1 = CARTA1  0 = CARTA2) \n");
+    // printf("POPULAÇÃO: %i\n", popwin);
+    // printf("ÁREA: %i\n", areawin);
+    // printf("PIB: %i\n", gdpwin);
+    // printf("P.TURÍSTICO: %i\n", turswin);
+    // printf("DENS.POPULACIONAL: %i\n", densipopwin);
+    // printf("PIBperCAPITA: %i\n", gdpcapwin);
+    // printf("SUPER TRUNFO: %i\n", spwin);
+    if(gdpcap > gdpcap2){
+        printf("CARTA1 É A VENCEDORA!! \n");
+    }   else{
+        printf("CARTA2 É A VENCEDORA!! \n");
+    }
 
 
     
