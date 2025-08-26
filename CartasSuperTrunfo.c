@@ -7,8 +7,10 @@
 //Teste larissa
 
 int main(){
+
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+
     char codcarta[10], codcarta2[10];
     char nome[30], nome2[30];
     unsigned long int population, population2;
@@ -19,11 +21,12 @@ int main(){
     float densipop, densipop2;
     float gdpcap, gdpcap2;
     float superpoder, superpoder2;
-
+    int comparaçao;
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
+
     printf("CARTA1 - Digite o Estado: \n");
     scanf(" %s", estado);
 
@@ -69,6 +72,7 @@ int main(){
     printf("\n\n");
 
     // Adicionando novas variáveis que calculam a desidade populacional e pib per capta.
+
     densipop = (float)population / area;
     densipop2 = (float)population2 / area2;
 
@@ -76,6 +80,7 @@ int main(){
     gdpcap2 = gdp2 / (float)population2;
 
     // Cálculo do SuperPoder, somando todos os atributos numéricos
+
     superpoder = (float)population + area + gdp + (float)turs + gdpcap + (1.0f / densipop);
     superpoder2 = (float)population2 + area2 + gdp2 + (float)turs2 + gdpcap2 + (1.0f / densipop2);
 
@@ -94,6 +99,7 @@ int main(){
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+
     printf(":::::CARTA1::::: \n");
     printf("Estado: %s \n", estado);
     printf("Código da carta: %s \n", codcarta);
@@ -118,10 +124,12 @@ int main(){
     printf("PIB per capita: %.2f reais \n", gdpcap2);
     printf("\n\n");
 
-    printf(":::::VENCEDOR::::: \n");
-    printf("ATRIBUTO: PIB per CAPTA \n");
-    printf("Carta1: %.2f reais \n", gdpcap);
-    printf("Carta2: %.2f reais \n", gdpcap2);
+
+    //printf(":::::VENCEDOR::::: \n");
+    //printf("ATRIBUTO: PIB per CAPTA \n");
+    //printf("Carta1: %.2f reais \n", gdpcap);
+    //printf("Carta2: %.2f reais \n", gdpcap2);
+
     // NOVO: mostrar apenas o atributo escolhido para comparação de vencedor
     // printf("(1 = CARTA1  0 = CARTA2) \n");
     // printf("POPULAÇÃO: %i\n", popwin);
@@ -131,11 +139,45 @@ int main(){
     // printf("DENS.POPULACIONAL: %i\n", densipopwin);
     // printf("PIBperCAPITA: %i\n", gdpcapwin);
     // printf("SUPER TRUNFO: %i\n", spwin);
-    if(gdpcap > gdpcap2){
-        printf("CARTA1 É A VENCEDORA!! \n");
-    }   else{
-        printf("CARTA2 É A VENCEDORA!! \n");
+
+    //if(gdpcap > gdpcap2){
+    //    printf("CARTA1 É A VENCEDORA!! \n");
+    //}   else{
+    //    printf("CARTA2 É A VENCEDORA!! \n");
+    //}
+
+
+    // NOVO: Adicionando ao jogador novas opções de interação
+
+    printf("QUAL ATRIBUTO DESEJA COMPARAR? \n");
+    printf("1 (ESTADO) \n");
+    printf("2 (POPULAÇÃO) \n");
+    printf("3 (ÁREA) \n");
+    printf("4 (PIB) \n");
+    printf("5 (PONTOS TURÍSTICOS) \n");
+    printf("6 (DENSIDADE DEMOGRÁFICA) \n");
+    scanf("%d", &comparaçao);
+
+    switch(comparaçao){
+        case 1:
+        printf("(CARTA1) POPULAÇÃO: ")
     }
+
+    if((population == population2) ||
+       (area == area2) ||
+       (gdp == gdp2) ||
+       (turs == turs2) ||
+       (densipop == densipop2)){
+        printf("::: EMPATOU! ::: \n");
+       } else if((population > population2) || 
+                 (area > area2) ||
+                 (gdp > gdp2) ||
+                 (turs > turs2) ||
+                 (densipop < densipop2)){
+                    printf("::: CARTA1 VENCEU! ::: \n");
+                 } else{
+                    printf("::: CARTA2 VENCEU! ::: \n");
+                 }
 
 
     
